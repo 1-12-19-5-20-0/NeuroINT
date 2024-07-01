@@ -13,8 +13,18 @@
 }
 
 /* Logo container */
-.logo-container img {
-  scale: .5;
+.logo-container {
+    display: flex;
+    margin-left: 5%;
+    
+}
+.logo-container img.logo {
+  max-width: 8%;
+  padding: 5px;
+}
+.logo-container img.logo-name {
+    max-width: 20%;
+    
 }
 
 /* Navigation links styling */
@@ -29,15 +39,15 @@
     margin-right: 20px;
 }
 
-.nav-links li a {
+.nav-links a {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
 }
 
-.nav-links li a.active {
-    background-color: rgb(4, 0, 137);
+.nav-links a.active {
+    background-color: rgb(0, 25, 145);
     color: rgb(255, 255, 255);
     letter-spacing: 1px;
     text-shadow: 
@@ -51,8 +61,8 @@
         0 1px 0 #000;
 }
 
-.nav-links li a:hover:not(.active) {
-    background-color: #555;
+.nav-links a:hover:not(.active) {
+    background-color:rgb(38, 141, 243);
     color: white;
 }
 /* Bodies of all pages */
@@ -111,19 +121,28 @@ body {
 /* Home page Company Info Section */
 .company-purpose {
     display: flex;
-    align-items: center;
-    padding: 0;
+    flex-wrap: wrap; /* Allow content to wrap if necessary */
+    align-items: flex-start; /* Align items to the start of the container */
+    padding: 20px;
     background-color: #f9f9f9;
-    margin-top: 0;
+    margin-top: 0px;
+}
+
+.company-image {
+    flex: 0 0 40%; /* Fixed width for the image container */
+    max-width: 40%; /* Ensure the image container does not exceed 40% */
+    margin-right: 20px; /* Add some space between the image and the text */
 }
 
 .company-image img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ensure the image scales correctly within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
 }
 
 .company-description {
-    margin-left: 20px;
+    flex: 1; /* Allow the description to take up the remaining space */
+    max-width: 60%; /* Ensure the description container does not exceed 60% */
 }
 
 .company-description h2 {
@@ -140,20 +159,15 @@ body {
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 8px 0;
     text-align: center;
-    position: fixed; /* Ensure a positioning context */
     width: 100%;
     /* Ensure there is no padding or margin affecting the width */
     margin: 0;
-    bottom: 0;
+    position: relative;
 }
 
 .footer-content {
     max-width: 100%; /* Adjust as needed */
     margin: 0 auto; /* Center horizontally */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
 }
