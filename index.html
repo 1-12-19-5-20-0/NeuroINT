@@ -7,6 +7,7 @@
         <link rel="icon" href="assets/imgs/logo.svg">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Navbar edit in scripts -->
         <script src="assets/scripts/navbar.js" defer></script> 
         <!-- Footer edit in scripts-->
@@ -51,15 +52,15 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
             var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
                 loop: true, // Enables continuous loop mode
                 pagination: {
                     el: '.swiper-pagination', // Container for pagination bullets
                     clickable: true, // Makes pagination bullets clickable
                 },
-                navigation: {
-                    nextEl: '.swiper-button-next', // Next button element
-                    prevEl: '.swiper-button-prev', // Previous button element
-                },
+                // Enable swiping with touch
+                simulateTouch: true,
             });
         </script>
     </body>
